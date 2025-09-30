@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.light {
+  background-color: #fefefe;
+  color: #222;
+}
+
+.dark {
+  background-color: #222;
+  color: #fefefe;
+}
+
+.header {
+  padding: 20px;
+}
+
+.theme-toggle {
+  width: 60px;
+  height: 32px;
+  background-color: #999;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.toggle-thumb.dark {
+  left: 30px;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.toggle-thumb.light {
+  left: 2px;
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay da carta cobre a tela */
+.card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background: inherit;
+}
+
+/* Agora a carta tem tamanho proporcional */
+.card {
+  width: 40vw;   /* 40% da largura da tela */
+  height: 60vh;  /* 60% da altura da tela */
+  max-width: 300px;  /* limite para não ficar gigante */
+  max-height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+/* Frente e costas */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;   /* tamanho do A */
+  font-weight: bold;
+  user-select: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+

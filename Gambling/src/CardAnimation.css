@@ -8,6 +8,14 @@
   transition: background 0.5s ease, color 0.5s ease;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
 .app.light {
   background: #fff;
   color: #000;
@@ -52,6 +60,7 @@
   background: #222;
   color: #ccc;
   border: 2px solid #888;
+  text-shadow: 0 0 5px #666666, 0 0 8px #666666;
 }
 
 .light-card .mini-symbol,
@@ -61,11 +70,11 @@
 
 /* Bordas arredondadas para todas as cartas dark */
 .dark-card .card-front {
-  background: #111;
+  background: #fff;
   border-radius: 12px; /* garante borda arredondada */
-  border: 2px solid #fff; /* contorno neutro sem glow */
+  border: 2px solid #f7f4f4; /* contorno neutro sem glow */
   box-shadow: none; /* sem neon no contorno */
-  color: #fff;
+  color: #e40f0f;
 }
 
 /* Neon apenas nos naipes coloridos (♥ e ♦) */
@@ -78,7 +87,7 @@
 .dark-card[data-suit="♦"] .card-symbol,
 .dark-card[data-suit="♦"] .mini-symbol {
   color: #ff0000;
-  text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a;
+  text-shadow: 0 0 5px #ffffff, 0 0 8px #f70404;
 }
 
 /* Neon apenas nos naipes cinza (♠ e ♣) */
@@ -91,7 +100,7 @@
 .dark-card[data-suit="♣"] .card-symbol,
 .dark-card[data-suit="♣"] .mini-symbol {
   color: #ccc;
-  text-shadow: 0 0 5px #999, 0 0 10px #ccc;
+  text-shadow: 0 0 5px #eb1919, 0 0 10px #c90a0a;
 }
 
 
@@ -103,8 +112,8 @@
 .dark-card[data-suit="♣"] .card-bottom-right,
 .dark-card[data-suit="♣"] .card-symbol,
 .dark-card[data-suit="♣"] .mini-symbol {
-  color: #ccc; /* cinza neon para espadas e paus */
-  text-shadow: 0 0 5px #999, 0 0 10px #ccc;
+  color: #000000; /* cinza neon para espadas e paus */
+  text-shadow: 0 0 5px #faf2f2, 0 0 10px #ccc;
 }
 
 /* Carta frontal */
